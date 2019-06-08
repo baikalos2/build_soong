@@ -134,7 +134,9 @@ func Banner(make_vars map[string]string) string {
 	fmt.Fprintf(b, "%s=%s\n", "AICP_VERSION", make_vars["AICP_VERSION"])
 	fmt.Fprintf(b, "%s=%s\n", "BUILD_ID", make_vars["BUILD_ID"])
 	fmt.Fprintf(b, "%s=%s\n", "OUT_DIR", make_vars["OUT_DIR"])
-	fmt.Fprintf(b, "%s=%s\n", "WITH_SU", make_vars["WITH_SU"])
+	if !(make_vars["WITH_SU"] == "") {
+	        fmt.Fprintf(b, "%s=%s\n", "WITH_SU", make_vars["WITH_SU"])
+	}
 	fmt.Fprintln(b, "=============================================================")
 	fmt.Fprintf(b, "%s=%s\n", "PLATFORM_VERSION_CODENAME", make_vars["PLATFORM_VERSION_CODENAME"])
 	fmt.Fprintf(b, "%s=%s\n", "PLATFORM_VERSION", make_vars["PLATFORM_VERSION"])
