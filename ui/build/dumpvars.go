@@ -183,7 +183,7 @@ func Banner(make_vars map[string]string) string {
 			fmt.Fprintf(b, "%s=%s\n", name, make_vars[name])
 		}
 		if (make_vars[name] != "" && name == "KERNEL_TOOLCHAIN") {
-			parts := strings.Split(make_vars[name], "linux-x86/")
+			parts := strings.Split(make_vars[name], "prebuilts/")
 			fmt.Fprintf(b, "%s=%s\n", name, parts[1])
 		}
 	}
